@@ -1,3 +1,8 @@
+# LiarCard repository layout:
+# - Client/      Unity 3D client
+# - Server/      Go authoritative server
+# - AITraining/  Python reinforcement learning training
+
 # Unity generated folders
 [Ll]ibrary/
 [Tt]emp/
@@ -12,11 +17,11 @@
 sysinfo.txt
 *.stackdump
 
-# Asset Store and Addressables generated data
-[Aa]ssets/AssetStoreTools*
-[Aa]ssets/AddressableAssetsData/*/*.bin*
+# Unity generated asset data
+**/[Aa]ssets/AssetStoreTools*
+**/[Aa]ssets/AddressableAssetsData/*/*.bin*
 
-# Visual Studio / Rider / VS Code generated files
+# Unity / C# IDE generated files
 .vs/
 .idea/
 .vscode/
@@ -33,6 +38,42 @@ sysinfo.txt
 *.opendb
 *.VC.db
 *.sln.DotSettings.user
+
+# Go server generated files
+Server/bin/
+Server/dist/
+Server/coverage.out
+Server/*.test
+Server/*.prof
+
+# Python training local environment and caches
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Python packaging/build outputs
+build/
+dist/
+*.egg-info/
+
+# AI training outputs
+AITraining/logs/
+AITraining/runs/
+AITraining/wandb/
+AITraining/mlruns/
+AITraining/checkpoints/
+AITraining/models/
+AITraining/data/
+!AITraining/logs/.gitkeep
+!AITraining/models/.gitkeep
+!AITraining/data/.gitkeep
 
 # OS generated files
 .DS_Store
@@ -53,9 +94,10 @@ Desktop.ini
 *.x86_64
 *.unitypackage
 
-# Local environment and temporary files
+# Local environment, secrets, and temporary files
 .env
-.env.local
+.env.*
+!.env.example
 *.tmp
 *.bak
 *.swp

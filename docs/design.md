@@ -109,7 +109,8 @@ Client/
 │   ├── Prefabs/            # 预制体
 │   ├── Art/                # 美术资源
 │   ├── Audio/              # 音频资源
-│   └── Materials/          # 材质资源
+│   ├── Materials/          # 材质资源
+│   └── Animations/         # 动画资源
 ├── Packages/
 └── ProjectSettings/
 ```
@@ -118,14 +119,17 @@ Client/
 
 ```text
 Client/Assets/Scripts/
+├── App/                    # 游戏启动、模式切换、全局入口
 ├── Presentation/           # UI、3D 表现、动画和特效
+├── Application/            # 玩家操作入口，统一调度不同游戏模式
 ├── LocalGame/              # 本地单机逻辑与本地规则结算
-├── Network/                # 在线模式网络通信
+├── OnlineGame/             # 在线模式客户端逻辑
 ├── ClientState/            # 客户端状态镜像
-├── RL/                     # Unity 内强化学习 AI 运行模块
+├── RLRuntime/              # Unity 内强化学习 AI 运行模块
 ├── Data/                   # 客户端配置数据
 └── Infrastructure/         # 客户端基础服务
 ```
+
 
 ### 5. Server 内部顶层结构
 
